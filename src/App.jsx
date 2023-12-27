@@ -5,10 +5,10 @@ import { calculateInvestmentResults } from "./util/investment";
 
 function App() {
   const [inputs, setInputs] = useState({});
-
+  const [data, setData] = useState([]);
   function handleInput(e, field) {
     setInputs((prevInputs) => {
-      const updatedInputs = { ...prevInputs, [field]: [+e.target.value] };
+      const updatedInputs = { ...prevInputs, [field]: +e.target.value };
       handleTable(updatedInputs);
       return updatedInputs;
     });
@@ -19,16 +19,18 @@ function App() {
       Object.keys(inputs).length === 4 &&
       Object.values(inputs).every((value) => +value > 0)
     ) {
-      let data = calculateInvestmentResults({ ...inputs });
+      setData(() => {
+        let updatedData = [calculateInvestmentResults({ ...inputs })];
+        return updatedData;
+      });
     }
   }
 
   return (
     <>
       <InputField onChange={handleInput} />
-      <ResultTable />
+      <ResultTable data={data[0]} />
     </>
   );
 }
-
 export default App;
