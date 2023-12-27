@@ -7,7 +7,7 @@ export default function InputField({ onChange }) {
           <input
             type="number"
             required
-            onChange={(e) => onChange(e, "Initial Investment")}
+            onChange={(e) => onChange(e, "initialInvestment")}
           />
         </p>
         <p>
@@ -15,7 +15,7 @@ export default function InputField({ onChange }) {
           <input
             type="number"
             required
-            onChange={(e) => onChange(e, "Annual Investment")}
+            onChange={(e) => onChange(e, "annualInvestment")}
           />
         </p>
         <p>
@@ -23,7 +23,7 @@ export default function InputField({ onChange }) {
           <input
             type="number"
             required
-            onChange={(e) => onChange(e, "Expected Return")}
+            onChange={(e) => onChange(e, "expectedReturn")}
           />
         </p>
         <p>
@@ -31,7 +31,7 @@ export default function InputField({ onChange }) {
           <input
             type="number"
             required
-            onChange={(e) => onChange(e, "Duration")}
+            onChange={(e) => onChange(e, "duration")}
           />
         </p>
       </div>
