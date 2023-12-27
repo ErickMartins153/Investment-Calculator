@@ -25,11 +25,10 @@ function App() {
       });
     }
   }
-
   return (
     <>
       <InputField onChange={handleInput} />
-      <ResultTable data={data[0]} />
+      <ResultTable data={data} />
     </>
   );
 }
